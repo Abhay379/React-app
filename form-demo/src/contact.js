@@ -1,9 +1,12 @@
 import React from 'react'
-class About extends React.Component{
+import About from './About'
+class Cont extends React.Component{
   render()
   {
+    return(
     <h1> About Page</h1>
+    )
   }
 }
 
-export default Contact
+export default Cont
