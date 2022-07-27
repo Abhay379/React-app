@@ -34,6 +34,7 @@ reportWebVitals();*/
 import {useState} from 'react'
 import ReactDOM from 'react-dom/client'
 import Todo from './Todo'
+import car from './car'
 
 const App=()=>{
   const [count,setCount]=useState(0)
@@ -42,13 +43,17 @@ const App=()=>{
 const increments=()=>{
   setCount((c)=>c+1);
 };
+const decrement=()=>{
+  setCount((c)=>c-1);
+};
 return(
   <>
   <Todo todos={todos}/>
   <hr/>
   <div>
-    Count:{count}
+    Count: {count}<br/>
     <button onClick={increments}>+</button>
+    <button onClick={decrement}>-</button>
   </div>
   </>
 )
@@ -62,5 +67,51 @@ const Header= ()=>{
   )
 }
 
+function Favoritecolor()
+{
+    const [color,setcolor]=useState("red");
+    return(
+        <>
+        <h1>My faourite color is {color}!</h1>
+        <button type="button" onClick={()=>setcolor("blue")}>Blue</button>
+        <button type="button" onClick={()=>setcolor("red")}>Red</button>
+        <button type="button" onClick={()=>setcolor("Pink")}>Pink</button>
+        <button type="button" onClick={()=>setcolor("Green")}>Green</button>
+        </>
+    )
+}
+function Car1()
+{
+  const [brand,setBrand]=useState("Ford")
+  const [model,setModel]=useState("Mustag")
+  const [year,setYear]=useState("2022")
+  const [color,setcolor]=useState("red")
+
+  return(
+    <>
+    <h1>my {brand}</h1>
+    <p> it is a {color} {model} from year {year}</p>
+    </>
+  )
+}
+function Emp()
+{
+  const [emp,setEmp]=useState({
+    name:"Mugil",
+    age:"25",
+    department:"development",
+    salary:"500000",
+    city:"Chennai"
+  });
+  return(
+    <>
+    <h1>I am {emp.name}</h1>
+    <p> my age is {emp.age} belongs to {emp.city} and my departments is {emp.department} and i am getting
+    salary of {emp.salary} per month.</p>
+    </>
+  )
+}
+
 const root=ReactDOM.createRoot(document.getElementById('root'));
-root.render([<App/>,<Header />])
+root.render([<App />,<Header />,<car />,<Favoritecolor />,<Car1/>,<Emp />])
+

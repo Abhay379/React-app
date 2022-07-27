@@ -1,6 +1,6 @@
 import React from 'react'
 import About from './About'
-class Cont extends React.Component{
+class Contact extends React.Component{
   render()
   {
     return(
@@ -9,4 +9,4 @@ class Cont extends React.Component{
   }
 }
 
-export default Cont
+export default Contact
